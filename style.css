@@ -10,11 +10,12 @@
 
 body {
     background-color: var(--main-color);
-    color: var(--textColor);
+    color: var(--third-color);
     font-family: "Nunito", sans-serif;
 
 }
 
+/* Navbar  */
 nav {
     background-color: var(--second-color);
     margin: 0;
@@ -35,4 +36,25 @@ ul {
 nav a {
     text-decoration: none;
     color: var(--textColor);
+}
+
+/* Section */
+.content>div {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+/* Home  section*/
+
+
+/* About me section */
+
+.profilePhoto img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
 }
