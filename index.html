@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Site</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <nav class="menu">
+    <nav data-aos="fade-down" data-aos-delay="1000" class="menu">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About me</a></li>
@@ -21,8 +23,8 @@
     <div class="content">
         <div id="home" class="home">
             <div class="homeInfo">
-                <h1>Welcome</h1>
-                <p>My name is Tadeusz Woźniak</p>
+                <h1 data-aos="fade-up">Welcome</h1>
+                <p data-aos="fade-up">My name is Tadeusz Woźniak</p>
             </div>
         </div>
         <div id="about" class="about">
@@ -35,5 +37,14 @@
         <div id="contact" class="contact">CONTACT</div>
     </div>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        delay: 200, // values from 0 to 3000, with step 50ms
+        duration: 1500, // values from 0 to 3000, with step 50ms
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+    });
+</script>
 
 </html>
