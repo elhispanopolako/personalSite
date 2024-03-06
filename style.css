@@ -125,4 +125,57 @@ nav a {
     border-radius: 50%;
 }
 
-/* About me section */
+/* Portfolio section */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolioContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.portfolioContainer .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fourth-color);
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.project h2,
+.project a {
+    display: none;
+}
+
+
+.portfolioContainer .project img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    margin: 0;
+    object-fit: cover;
+}
+
+.project.active {
+    flex: 3
+}
+
+.project.active img {
+    object-fit: fill;
+    height: 90%;
+}
+
+.project.active h2,
+.project.active a {
+    display: contents;
+}

@@ -7,14 +7,12 @@
     <title>Personal Site</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="index.js"></script>
 </head>
 
 <body>
     <nav data-aos="fade-down" data-aos-delay="1000" class="menu">
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About me</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -32,14 +30,37 @@
                 <img src="files/me.jpeg" alt="profile photo">
             </div>
         </div>
-        <div id="about" class="about">
-
+        <div id="portfolio" class="portfolio">
+            <div class="portfolioContainer">
+                <div class="project active">
+                    <img src="https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                        alt="" class="projectImage">
+                    <h2 class="projectTitle">Title</h2>
+                    <a href="link" target="_blank">
+                        <button>Go to demo</button>
+                    </a>
+                </div>
+                <div class="project ">
+                    <img src="files/project1.png" alt="" class="projectImage">
+                    <h2 class="projectTitle">Title</h2>
+                    <a href="link" target="_blank">
+                        <button>Go to demo</button>
+                    </a>
+                </div>
+                <div class="project ">
+                    <img src="files/project1.png" alt="" class="projectImage">
+                    <h2 class="projectTitle">Title</h2>
+                    <a href="link" target="_blank">
+                        <button>Go to demo</button>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div id="portfolio" class="portfolio">PORTFOLIO</div>
         <div id="skills" class="skills">SKILLS</div>
         <div id="contact" class="contact">CONTACT</div>
     </div>
 </body>
+<script src="index.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
