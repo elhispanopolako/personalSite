@@ -5,7 +5,7 @@
     --second-color: #B4D4FF;
     --third-color: #86B6F6;
     --fourth-color: #176B87;
-    --textColor: #fff
+    --whiteColor: #fff
 }
 
 body {
@@ -41,7 +41,7 @@ nav ul li:hover {
 
 nav a {
     text-decoration: none;
-    color: var(--textColor);
+    color: var(--whiteColor);
 }
 
 /* Section */
@@ -53,12 +53,13 @@ nav a {
 /* Home  section*/
 .home {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
 }
 
 .homeInfo {
+    grid-column: span 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,7 +143,7 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--fourth-color);
+    background-color: var(--whiteColor);
     height: 80vh;
     border-radius: 50px;
     cursor: pointer;
@@ -167,15 +168,19 @@ nav a {
 }
 
 .project.active {
-    flex: 3
+    flex: 15
 }
 
 .project.active img {
     object-fit: fill;
-    height: 90%;
+    height: 80%;
 }
 
 .project.active h2,
 .project.active a {
     display: contents;
+}
+
+.project button {
+    margin-bottom: 10px;
 }
