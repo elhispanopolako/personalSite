@@ -2,7 +2,8 @@
 const portfolioContainer = document.querySelector('.portfolioContainer')
 const projectsJSON = [
     { projectName: 'Insect catch game', img: 'files/project3.png', link: 'https://elhispanopolako.github.io/insectCatchGame/', isActive: false },
-    { projectName: 'Quote generator', img: 'files/project2.png', link: 'https://elhispanopolako.github.io/quoteGenerator/', isActive: true },
+    { projectName: 'Quote generator', img: 'files/project2.png', link: 'https://elhispanopolako.github.io/quoteGenerator/', isActive: false },
+    { projectName: 'Lego Tinder Swiper', img: 'files/project6.png', link: 'https://elhispanopolako.github.io/legoSwipe/', isActive: true },
     { projectName: 'Pokedex', img: 'files/project4.png', link: 'https://elhispanopolako.github.io/pokedex/', isActive: false },
     { projectName: 'Password Generator', img: 'files/project5.png', link: 'https://elhispanopolako.github.io/passwordGenerator/', isActive: false },
 ]
