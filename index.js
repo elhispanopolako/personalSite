@@ -1,5 +1,7 @@
-//Project 
+//Selectors 
 const portfolioContainer = document.querySelector('.portfolioContainer')
+const skills = document.querySelectorAll('.skillsContainer .skill')
+// Projects
 const projectsJSON = [
     { projectName: 'Insect catch game', img: 'files/project3.png', link: 'https://elhispanopolako.github.io/insectCatchGame/', isActive: false },
     { projectName: 'Quote generator', img: 'files/project2.png', link: 'https://elhispanopolako.github.io/quoteGenerator/', isActive: false },
@@ -7,10 +9,12 @@ const projectsJSON = [
     { projectName: 'Pokedex', img: 'files/project4.png', link: 'https://elhispanopolako.github.io/pokedex/', isActive: false },
     { projectName: 'Password Generator', img: 'files/project5.png', link: 'https://elhispanopolako.github.io/passwordGenerator/', isActive: false },
 ]
+// On init
 displayProjects()
+addHoverToSkills()
+
 const projects = document.querySelectorAll('.portfolioContainer .project')
 
-console.log(projects)
 projects.forEach((projectEl) => {
     projectEl.addEventListener('click', () => {
         removeActiveClasses()
@@ -44,4 +48,9 @@ function createProjectCard(project) {
     projectDiv.innerHTML = projectInnerHtml
     portfolioContainer.appendChild(projectDiv)
 }
-//
+//Skills 
+function addHoverToSkills() {
+    skills.forEach((skill) => {
+        skill.classList.add('hvr-float-shadow')
+    })
+}

@@ -11,7 +11,6 @@
 body {
     background-color: var(--main-color);
     color: var(--third-color);
-    background-color: #eef5ff;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2386b6f6' fill-opacity='0.34' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     font-family: "Nunito", sans-serif;
 
@@ -207,4 +206,40 @@ nav a {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
     gap: 10px;
+}
+
+.skill h3 {
+    text-align: center;
+}
+
+.skill>img {
+    width: 63px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.circleIcon>img {
+    height: 70px;
+    width: 70px;
+    border-radius: 30px;
+}
+
+.largeIcon>img {
+    object-fit: fill;
+    width: 90px;
+}
+
+/* Media Query */
+@media screen and (max-width:750px) {
+    .home {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 50px;
+    }
+
+    .homeInfo h1 {
+        font-size: 2rem;
+    }
+
 }
