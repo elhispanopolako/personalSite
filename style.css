@@ -234,12 +234,28 @@ nav a {
     .home {
         display: flex;
         flex-direction: column;
-        position: relative;
-        top: 50px;
+
     }
 
     .homeInfo h1 {
         font-size: 2rem;
+    }
+
+    .profilePhoto img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    .content>div {
+        height: auto;
+        position: relative;
+        top: 90px;
+        gap: 15px;
+    }
+
+    .portfolio h2 {
+        top: 30px;
     }
 
 }
