@@ -83,7 +83,31 @@
                 </div>
             </div>
         </div>
-        <div id="contact" class="contact">CONTACT</div>
+        <div id="contact" class="contact">
+            <h2>CONTACT</h2>
+            <form action="https://formsubmit.co/tadeuszdavidwozniak@gmail.com" method="POST">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="name">Name</label>
+                <input type="text" name="name" required>
+                <label for="subject">Subject</label>
+                <select name="subject" id="subject">
+                    <option value="question">General information</option>
+                    <option value="question">Collaboration Offers</option>
+                    <option value="question">Consultations</option>
+                    <option value="question">Other</option>
+                </select>
+                <label for="message">Message</label>
+                <textarea type="text" name="message" rows="4" required></textarea>
+                <button type="submit">Contact me</button>
+            </form>
+            <ul>
+                <li>Linkedin</li>
+                <li>Mail</li>
+                <li>Github</li>
+            </ul>
+
+        </div>
     </div>
 </body>
 <script src="index.js"></script>
