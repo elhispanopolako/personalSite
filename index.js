@@ -1,6 +1,12 @@
 //Selectors 
 const portfolioContainer = document.querySelector('.portfolioContainer')
 const skills = document.querySelectorAll('.skillsContainer .skill')
+const homeBtn = document.getElementById('homeBtn')
+// Home
+homeBtn.onclick = () => {
+    location.hash = '#contact'
+}
+
 // Projects
 const projectsJSON = [
     { projectName: 'Insect catch game', img: 'files/project3.png', link: 'https://elhispanopolako.github.io/insectCatchGame/', isActive: false },
