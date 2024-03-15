@@ -5,7 +5,8 @@
     --second-color: #B4D4FF;
     --third-color: #86B6F6;
     --fourth-color: #176B87;
-    --whiteColor: #fff
+    --whiteColor: #fff;
+    --boxShadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 html {
@@ -257,6 +258,8 @@ nav a {
     border-radius: 20px;
     width: 250px;
     height: 250px;
+    box-shadow: var(--boxShadow);
+
 }
 
 .contact form .submitBtn {
@@ -276,6 +279,75 @@ nav a {
 
 .contact form textarea {
     resize: vertical;
+}
+
+
+.contact ul {
+    margin: 0;
+}
+
+.contact ul li {
+    display: block;
+    width: fit-content;
+    font-size: 1.2rem;
+    list-style-type: none;
+
+}
+
+.contact ul li a {
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    margin-bottom: 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+    box-shadow: var(--boxShadow);
+
+}
+
+.contact li a .icon {
+    position: relative;
+    color: var(--third-color);
+    transition: .5s;
+    z-index: 3;
+}
+
+.contact ul li:hover .icon {
+    color: var(--whiteColor);
+    transform: rotateY(360deg);
+}
+
+.contact ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #55acee;
+    transition: .5s;
+    z-index: 2;
+}
+
+.contact li a:hover:before {
+    top: 0;
+}
+
+.contact li:nth-child(3) a:before {
+    background: #3b5999;
+}
+
+ul li:nth-child(1) a:before {
+    background: black;
 }
 
 
