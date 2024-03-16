@@ -1,7 +1,8 @@
 
 # Personal Portfolio Site
 
-Welcome to my personal portfolio site! This repository contains the code and assets for my online portfolio where I showcase my projects, skills, and experiences.
+Welcome to my personal portfolio site! This repository contains the code and assets for my online portfolio where I showcase my projects, skills, and experiences. It's created for a [100comitow](https://100commitow.pl/repozytoria) challenge.
+Demo link: https://elhispanopolako.github.io/personalSite/
 
 ## Table of Contents
 
