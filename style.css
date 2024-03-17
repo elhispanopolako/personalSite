@@ -18,6 +18,7 @@ body {
     color: var(--third-color);
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2386b6f6' fill-opacity='0.34' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
 
 }
 
@@ -73,8 +74,9 @@ nav a {
 }
 
 .homeInfo h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .homeInfo p.homeWelcome {
@@ -82,7 +84,7 @@ nav a {
 }
 
 .homeInfo p {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 /* CSS button */
@@ -103,7 +105,7 @@ nav a {
     transition: .3s linear, color 0s, background-color 0s;
     outline: var(--b) solid #0000;
     outline-offset: .6em;
-    font-size: 16px;
+    font-size: 1.5rem;
 
     border: 0;
 
@@ -210,8 +212,15 @@ nav a {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
     justify-items: center;
     gap: 10px;
+}
+
+.skill {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
 .skill h3 {
@@ -237,32 +246,34 @@ nav a {
 
 /* Contact */
 .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3rem 1fr;
-    align-items: start;
-    row-gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .contact h2 {
-    grid-column: span 2;
     text-align: center;
+    margin: 0;
 }
 
 .contact form {
-    justify-self: end;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #fdfdfd;
     padding: 20px;
     border-radius: 20px;
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
     box-shadow: var(--boxShadow);
 
 }
 
 .contact form .submitBtn {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
     margin: 10px 0px;
     cursor: pointer;
     color: var(--whiteColor);
@@ -277,17 +288,50 @@ nav a {
     filter: brightness(1.1);
 }
 
+.contact form input {
+    height: 30px;
+    border: 2px solid var(--third-color);
+    padding: 2px;
+    color: var(--third-color);
+    font-weight: bold;
+    outline: none;
+
+}
+
+.contact form select {
+    height: 36px;
+    border: 2px solid var(--third-color);
+    padding: 2px;
+    color: var(--third-color);
+    font-weight: bold;
+    background-color: #fff;
+    outline: none;
+}
+
+.contact form select:active {
+    border: 2px solid var(--third-color);
+
+}
+
 .contact form textarea {
     resize: vertical;
+    border: 2px solid var(--third-color);
+    color: var(--third-color);
+    font-weight: bold;
+    background-color: #fff;
+    outline: none;
 }
 
 
 .contact ul {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
     margin: 0;
 }
 
 .contact ul li {
-    display: block;
+    /* display: block; */
     width: fit-content;
     font-size: 1.2rem;
     list-style-type: none;
