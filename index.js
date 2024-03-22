@@ -1,5 +1,11 @@
 //Selectors 
 const portfolioContainer = document.querySelector('.portfolioContainer')
+const content = document.querySelector('.content')
+const moreNavs = document.querySelector('.moreNavs')
+const showMoreButton = document.getElementById('showMore')
+const navBarElements = document.querySelectorAll('nav li.menuItem a')
+const moreIcon = document.querySelector('#showMore .more')
+const lessIcon = document.querySelector('#showMore .less')
 const skills = document.querySelectorAll('.skillsContainer .skill')
 const homeBtn = document.getElementById('homeBtn')
 // Home
@@ -19,6 +25,16 @@ const projectsJSON = [
 displayProjects()
 addHoverToSkills()
 
+showMoreButton.addEventListener('click', () => {
+    content.classList.toggle('showMore')
+    moreNavs.classList.toggle('show')
+    moreIcon.hidden = moreIcon.hidden == true ? false : true
+    lessIcon.hidden = lessIcon.hidden == true ? false : true
+    navBarElements.forEach((item) => {
+        console.log(item)
+        item.classList.toggle('disabled')
+    });
+})
 const projects = document.querySelectorAll('.portfolioContainer .project')
 
 projects.forEach((projectEl) => {

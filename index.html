@@ -14,13 +14,21 @@
 <body>
     <nav data-aos="fade-down" data-aos-delay="1000" class="menu">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="/generatory.html">+</a></li>
+            <li class="menuItem"><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li class="menuItem"><a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
+            <li class="menuItem"><a href="#skills"><i class="fa-solid fa-wrench"></i> Skills</a></li>
+            <li class="menuItem"><a href="#contact"><i class="fas fa-user-alt"></i> Contact</a></li>
+            <li id="showMore">
+                <a class="more" href="#home"><i class="fa-solid fa-square-plus"></i> More</a>
+                <a hidden class="less" href="#home"><i class="fa-solid fa-square-minus"></i> Less</a>
+            </li>
         </ul>
     </nav>
+    <div class="moreNavs">
+        <ul>
+            <li><a href="generatory.html"><i class="fa-solid fa-laptop-code"></i> Generatory</a> </li>
+        </ul>
+    </div>
     <div class="content">
         <div id="home" class="home">
             <div data-aos="fade-up" class="homeInfo">
