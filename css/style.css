@@ -22,6 +22,10 @@ body {
     font-size: var(--fontSizeDesktop);
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
 
 
 /* Navbar  */

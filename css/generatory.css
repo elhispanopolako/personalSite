@@ -1,0 +1,62 @@
+:root {
+    --main-color: #EEF5FF;
+    --second-color: #B4D4FF;
+    --third-color: #86B6F6;
+    --fourth-color: #176B87;
+    --whiteColor: #fff;
+    --boxShadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    --fontSizeDesktop: 1.5rem
+}
+
+.generatorContent {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.generatorContainer {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--third-color);
+    box-shadow: var(--boxShadow);
+    background-color: var(--main-color);
+    border-radius: 15px;
+
+}
+
+.generatorContainer h3 {
+    margin: 30px 0 10px 0;
+}
+
+.generatorContainer .generatedData {
+    padding: 10px;
+    margin: 10px;
+    width: 85%;
+    background-color: var(--whiteColor);
+    outline: none;
+    border: 1px solid var(--third-color);
+    font-size: var(--fontSizeDesktop);
+    border-radius: 15px;
+    color: var(--third-color);
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.generatorContainer .generateBtn {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--third-color);
+    color: var(--whiteColor);
+    outline: none;
+    border: 1px solid var(--whiteColor);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+
+}

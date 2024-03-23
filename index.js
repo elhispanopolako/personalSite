@@ -8,6 +8,7 @@ const moreIcon = document.querySelector('#showMore .more')
 const lessIcon = document.querySelector('#showMore .less')
 const skills = document.querySelectorAll('.skillsContainer .skill')
 const homeBtn = document.getElementById('homeBtn')
+let body = document.querySelector('body')
 // Home
 homeBtn.onclick = () => {
     location.hash = '#contact'
@@ -31,9 +32,11 @@ showMoreButton.addEventListener('click', () => {
     moreIcon.hidden = moreIcon.hidden == true ? false : true
     lessIcon.hidden = lessIcon.hidden == true ? false : true
     navBarElements.forEach((item) => {
-        console.log(item)
         item.classList.toggle('disabled')
     });
+    homeBtn.classList.toggle('disabled')
+    body.classList.toggle('stop-scrolling')
+
 })
 const projects = document.querySelectorAll('.portfolioContainer .project')
 
