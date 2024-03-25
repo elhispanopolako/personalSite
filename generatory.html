@@ -16,15 +16,25 @@
 <body>
     <h1>Generatory testowe, ...in progress</h1>
     <p>Będzie generator peselów,dowodu,mdowodu,paszportu,numer decyzji WZON,NIP,REGON,IBAN,KRS</p>
+    <div class="toasts"></div>
     <div class="generatorContent">
-        <div class="generatorContainer" id="pesel">
-            <h3>Pesel -18</h3>
+        <div class="generatorContainer" id="peselUnder18">
+            <h3>Pesel under 18</h3>
             <button class="generatedData">12312312311</button>
             <button class="generateBtn">Generuj</button>
-
         </div>
         <div class="generatorContainer" id="pesel">
-            <h3>Pesel +18</h3>
+            <h3>Pesel 7-12 lat</h3>
+            <button class="generatedData">12312312311</button>
+            <button class="generateBtn">Generuj</button>
+        </div>
+        <div class="generatorContainer" id="pesel">
+            <h3>Pesel 13-18 lat</h3>
+            <button class="generatedData">12312312311</button>
+            <button class="generateBtn">Generuj</button>
+        </div>
+        <div class="generatorContainer" id="pesel">
+            <h3>Pesel +18 lat</h3>
             <button class="generatedData">12312312311</button>
             <button class="generateBtn">Generuj</button>
 
@@ -59,7 +69,6 @@
             <button class="generateBtn">Generuj</button>
         </div>
     </div>
-
 </body>
 <script src="generatory.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
