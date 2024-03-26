@@ -47,6 +47,13 @@
 
 }
 
+
+.generatorContainer .generatedData i {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 24px;
+}
+
 .generatorContainer .generateBtn {
     padding: 10px;
     margin-bottom: 10px;
@@ -61,6 +68,7 @@
 
 }
 
+/* Toasts */
 .toasts {
     position: absolute;
     bottom: 20px;
@@ -77,3 +85,5 @@
     font-weight: bold;
     margin: 5px;
 }
+
+/* Tooltip */
