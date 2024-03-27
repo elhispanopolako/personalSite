@@ -39,19 +39,12 @@
     background-color: var(--whiteColor);
     outline: none;
     border: 1px solid var(--third-color);
-    font-size: var(--fontSizeDesktop);
+    font-size: 1.4rem;
     border-radius: 15px;
     color: var(--third-color);
     cursor: pointer;
     font-weight: bold;
 
-}
-
-
-.generatorContainer .generatedData i {
-    display: inline-flex;
-    justify-content: flex-end;
-    width: 24px;
 }
 
 .generatorContainer .generateBtn {
@@ -68,10 +61,14 @@
 
 }
 
+.generatorContainer .icon {
+    padding-left: 5px;
+}
+
 /* Toasts */
 .toasts {
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
     display: flex;
     flex-direction: column;
