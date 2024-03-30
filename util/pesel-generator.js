@@ -182,7 +182,7 @@ export const generatePeselForBetween21and24YearsOld = () => {
 };
 export const generatePeselForBetween1and3YearsOld = () => {
     var today = new Date();
-    var birthYear = rand(today.getFullYear() - 2, today.getFullYear() - 1);
+    var birthYear = rand(today.getFullYear() - 3, today.getFullYear() - 1);
 
     var century = Math.floor(birthYear / 100);
     var monthOffset = getMonthOffsetForPesel(century);
@@ -203,32 +203,9 @@ export const generatePeselForBetween1and3YearsOld = () => {
     var PESEL = rawPesel + controlDigit;
     return PESEL;
 };
-export const generatePeselForBetween1and6YearsOld = () => {
+export const generatePeselForBetween3and5YearsOld = () => {
     var today = new Date();
-    var birthYear = rand(today.getFullYear() - 5, today.getFullYear() - 1);
-
-    var century = Math.floor(birthYear / 100);
-    var monthOffset = getMonthOffsetForPesel(century);
-
-    var birthMonth = rand(1, 13);
-    var birthDay = rand(1, daysInMonth(birthYear, birthMonth) + 1);
-    var peselMonth = birthMonth + monthOffset;
-
-    var fourRandomDigits = ('0000' + rand(0, 10000).toString(10)).slice(-4);
-
-    var rawPesel =
-        last2Digits(birthYear) +
-        last2Digits(peselMonth) +
-        last2Digits(birthDay) +
-        fourRandomDigits;
-
-    var controlDigit = computePeselControlDigit(rawPesel);
-    var PESEL = rawPesel + controlDigit;
-    return PESEL;
-};
-export const generatePeselForBetween6and18YearsOld = () => {
-    var today = new Date();
-    var birthYear = rand(today.getFullYear() - 18, today.getFullYear() - 6);
+    var birthYear = rand(today.getFullYear() - 5, today.getFullYear() - 3);
 
     var century = Math.floor(birthYear / 100);
     var monthOffset = getMonthOffsetForPesel(century);

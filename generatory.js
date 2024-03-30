@@ -1,4 +1,4 @@
-import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
+import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
 const generatedDataBtn = document.querySelectorAll('.generatedData')
@@ -14,8 +14,12 @@ const pesel7to9Data = document.querySelector('#pesel7to9 .generatedData .buttonT
 const pesel7to9Btn = document.querySelector('#pesel7to9 .generateBtn')
 const pesel10to20Data = document.querySelector('#pesel10to20 .generatedData .buttonText')
 const pesel10to20Btn = document.querySelector('#pesel10to20 .generateBtn')
-
-
+const pesel21to24Data = document.querySelector('#pesel21to24 .generatedData .buttonText')
+const pesel21to24Btn = document.querySelector('#pesel21to24 .generateBtn')
+const pesel1to3Data = document.querySelector('#pesel1to3 .generatedData .buttonText')
+const pesel1to3Btn = document.querySelector('#pesel1to3 .generateBtn')
+const pesel3to5Data = document.querySelector('#pesel3to5 .generatedData .buttonText')
+const pesel3to5Btn = document.querySelector('#pesel3to5 .generateBtn')
 
 
 generatedDataBtn.forEach((button) => {
@@ -65,7 +69,18 @@ pesel10to20Btn.addEventListener('click', () => {
     let pesel = generatePeselForBetween10and20YearsOld()
     pesel10to20Data.textContent = pesel
 })
-
+pesel21to24Btn.addEventListener('click', () => {
+    let pesel = generatePeselForBetween21and24YearsOld()
+    pesel21to24Data.textContent = pesel
+})
+pesel1to3Btn.addEventListener('click', () => {
+    let pesel = generatePeselForBetween1and3YearsOld()
+    pesel1to3Data.textContent = pesel
+})
+pesel3to5Btn.addEventListener('click', () => {
+    let pesel = generatePeselForBetween3and5YearsOld()
+    pesel3to5Data.textContent = pesel
+})
 
 // On page enter
 generateDataOnPageEnter()

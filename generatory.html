@@ -16,7 +16,7 @@
 <body>
     <h1 style="text-align: center;">Generatory testowe, ...in progress</h1>
     <p style="text-align: center;">Będzie generator peselów,dowodu,mdowodu,paszportu,numer decyzji
-        WZON,NIP,REGON,IBAN,KRS</p>
+        WZON,NIP,REGON,IBAN,KRS,nr ksiąg wieczystych</p>
     <div class="toasts"></div>
     <div class="generatorContent">
         <div class="generatorContainer" id="peselUnder18">
@@ -29,6 +29,22 @@
         </div>
         <div class="generatorContainer" id="peselOver18">
             <h3>Pesel +18 lat</h3>
+            <button class="generatedData">
+                <span class="buttonText"></span>
+                <span class="icon"><i class="fa-regular fa-copy"></i></span>
+            </button>
+            <button class="generateBtn">Generuj</button>
+        </div>
+        <div class="generatorContainer" id="pesel1to3">
+            <h3>Pesel 1-3 lat</h3>
+            <button class="generatedData">
+                <span class="buttonText"></span>
+                <span class="icon"><i class="fa-regular fa-copy"></i></span>
+            </button>
+            <button class="generateBtn">Generuj</button>
+        </div>
+        <div class="generatorContainer" id="pesel3to5">
+            <h3>Pesel 3-5 lat</h3>
             <button class="generatedData">
                 <span class="buttonText"></span>
                 <span class="icon"><i class="fa-regular fa-copy"></i></span>
@@ -59,7 +75,14 @@
             </button>
             <button class="generateBtn">Generuj</button>
         </div>
-
+        <div class="generatorContainer" id="pesel21to24">
+            <h3>Pesel 21-24 lat</h3>
+            <button class="generatedData">
+                <span class="buttonText"></span>
+                <span class="icon"><i class="fa-regular fa-copy"></i></span>
+            </button>
+            <button class="generateBtn">Generuj</button>
+        </div>
         <div class="generatorContainer" id="dowod">
             <h3>Dowodu osobistego</h3>
             <button class="generatedData">
@@ -67,7 +90,6 @@
                 <span class="icon"><i class="fa-regular fa-copy"></i></span>
             </button>
             <button class="generateBtn">Generuj</button>
-
         </div>
         <div class="generatorContainer" id="mDowod">
             <h3>Mdowód</h3>
