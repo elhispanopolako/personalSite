@@ -1,3 +1,4 @@
+import { generateDowod } from "./util/dowod-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
@@ -20,7 +21,8 @@ const pesel1to3Data = document.querySelector('#pesel1to3 .generatedData .buttonT
 const pesel1to3Btn = document.querySelector('#pesel1to3 .generateBtn')
 const pesel3to5Data = document.querySelector('#pesel3to5 .generatedData .buttonText')
 const pesel3to5Btn = document.querySelector('#pesel3to5 .generateBtn')
-
+const dowodData = document.querySelector('#dowod .generatedData .buttonText')
+const dowodBtn = document.querySelector('#dowod .generateBtn')
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -80,6 +82,10 @@ pesel1to3Btn.addEventListener('click', () => {
 pesel3to5Btn.addEventListener('click', () => {
     let pesel = generatePeselForBetween3and5YearsOld()
     pesel3to5Data.textContent = pesel
+})
+dowodBtn.addEventListener('click', () => {
+    let dowod = generateDowod()
+    dowodData.textContent = dowod
 })
 
 // On page enter

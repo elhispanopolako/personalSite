@@ -1,4 +1,5 @@
-// https://biznes.interia.pl/finanse/news-seria-i-numer-dowodu-osobistego-jakie-informacje-kryja-w-sob,nId,6699449
+// https://biznes.interia.pl/finanse/news-seria-i-numer-dowodu-osobistego-jakie-informacje-kryja-w-sob,nId,6699449'
+
 let letterMap = {
     'A': 10,
     'B': 11,
@@ -30,14 +31,44 @@ let letterMap = {
 let weights = [7, 3, 1, 9, 7, 3, 1, 7, 3]
 
 
-let test = [35, 35, 12, 1, 0, 8, 2, 0, 1]
-
-let result = []
-for (let i = 0; i < test.length; i++) {
-    console.log(weights[i], test[i])
-    result.push(test[i] * weights[i])
+let randomLetter = () => {
+    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    let letterArray = letters.split('')
+    return letterArray[Math.floor(Math.random() * letterArray.length)]
 }
-console.log(result)
-console.log(result.reduce((acc, curr) => {
-    return acc + curr
-}, 0))
+let randomInt = () => {
+    return Math.floor(Math.random() * 10)
+}
+let randomDowod = () => {
+    return [randomLetter(), randomLetter(), randomLetter(), randomInt(), randomInt(), randomInt(), randomInt(), randomInt(), randomInt()]
+}
+
+let checkWeights = (dowod, weight) => {
+    let result = []
+    for (let i = 0; i < dowod.length; i++) {
+        let nowInt
+        if (i < 3) {
+            nowInt = letterMap[dowod[i]]
+        } else {
+            nowInt = dowod[i]
+        }
+        result.push(nowInt * weight[i])
+    }
+    result = result.reduce((acc, curr) => {
+        return acc + curr
+    }, 0)
+    return result
+
+}
+export const generateDowod = () => {
+    let dowod = randomDowod()
+    let result = checkWeights(dowod, weights)
+    while (result % 10 !== 0) {
+        dowod = randomDowod()
+        result = checkWeights(dowod, weights)
+    }
+    console.log(result)
+    return dowod.join('')
+}
+
+
