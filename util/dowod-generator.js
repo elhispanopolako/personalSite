@@ -1,3 +1,4 @@
+// https://biznes.interia.pl/finanse/news-seria-i-numer-dowodu-osobistego-jakie-informacje-kryja-w-sob,nId,6699449'
 const LETTER_MAP = {
     'A': 10,
     'B': 11,
