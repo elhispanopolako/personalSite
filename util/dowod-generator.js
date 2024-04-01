@@ -1,6 +1,4 @@
-// https://biznes.interia.pl/finanse/news-seria-i-numer-dowodu-osobistego-jakie-informacje-kryja-w-sob,nId,6699449'
-
-let letterMap = {
+const LETTER_MAP = {
     'A': 10,
     'B': 11,
     'C': 12,
@@ -27,48 +25,51 @@ let letterMap = {
     'X': 33,
     'Y': 34,
     'Z': 35
-}
-let weights = [7, 3, 1, 9, 7, 3, 1, 7, 3]
+};
 
+const WEIGHTS = [7, 3, 1, 9, 7, 3, 1, 7, 3];
 
-let randomLetter = () => {
-    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    let letterArray = letters.split('')
-    return letterArray[Math.floor(Math.random() * letterArray.length)]
-}
-let randomInt = () => {
-    return Math.floor(Math.random() * 10)
-}
-let randomDowod = () => {
-    return [randomLetter(), randomLetter(), randomLetter(), randomInt(), randomInt(), randomInt(), randomInt(), randomInt(), randomInt()]
-}
+const randomLetter = () => {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const letterArray = letters.split('');
+    return letterArray[Math.floor(Math.random() * letterArray.length)];
+};
 
-let checkWeights = (dowod, weight) => {
-    let result = []
+const randomInt = () => {
+    return Math.floor(Math.random() * 10);
+};
+
+const randomDowod = () => {
+    return [
+        randomLetter(),
+        randomLetter(),
+        randomLetter(),
+        randomInt(),
+        randomInt(),
+        randomInt(),
+        randomInt(),
+        randomInt(),
+        randomInt()
+    ];
+};
+
+const checkWeights = (dowod, weight) => {
+    let result = 0;
     for (let i = 0; i < dowod.length; i++) {
-        let nowInt
-        if (i < 3) {
-            nowInt = letterMap[dowod[i]]
-        } else {
-            nowInt = dowod[i]
-        }
-        result.push(nowInt * weight[i])
+        const nowInt = i < 3 ? LETTER_MAP[dowod[i]] : dowod[i];
+        result += nowInt * weight[i];
     }
-    result = result.reduce((acc, curr) => {
-        return acc + curr
-    }, 0)
-    return result
+    return result;
+};
 
-}
 export const generateDowod = () => {
-    let dowod = randomDowod()
-    let result = checkWeights(dowod, weights)
+    let dowod = randomDowod();
+    let result = checkWeights(dowod, WEIGHTS);
     while (result % 10 !== 0) {
-        dowod = randomDowod()
-        result = checkWeights(dowod, weights)
+        dowod = randomDowod();
+        result = checkWeights(dowod, WEIGHTS);
     }
-    console.log(result)
-    return dowod.join('')
-}
-
+    console.log(result);
+    return dowod.join('');
+};
 
