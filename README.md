@@ -28,7 +28,8 @@ This portfolio site serves as a digital resume and a showcase of my work in the 
 
 - HTML5
 - CSS3
-- JavaScript 
+- JavaScript
+- Chat GPT(code review) 
 ## Installation
 
 1. Clone the repository:
@@ -54,4 +55,3 @@ This portfolio site serves as a digital resume and a showcase of my work in the 
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to submit a pull request or open an issue.
-
