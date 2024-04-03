@@ -1,3 +1,5 @@
+import { randomInt, randomLetter } from "./helper.js";
+
 // https://biznes.interia.pl/finanse/news-seria-i-numer-dowodu-osobistego-jakie-informacje-kryja-w-sob,nId,6699449'
 const LETTER_MAP = {
     'A': 10,
@@ -30,15 +32,6 @@ const LETTER_MAP = {
 
 const WEIGHTS = [7, 3, 1, 9, 7, 3, 1, 7, 3];
 
-const randomLetter = () => {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const letterArray = letters.split('');
-    return letterArray[Math.floor(Math.random() * letterArray.length)];
-};
-
-const randomInt = () => {
-    return Math.floor(Math.random() * 10);
-};
 
 const randomDowod = () => {
     return [
@@ -70,7 +63,6 @@ export const generateDowod = () => {
         dowod = randomDowod();
         result = checkWeights(dowod, WEIGHTS);
     }
-    console.log(result);
     return dowod.join('');
 };
 

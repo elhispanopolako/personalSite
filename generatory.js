@@ -1,4 +1,5 @@
 import { generateDowod } from "./util/dowod-generator.js"
+import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
@@ -23,6 +24,8 @@ const pesel3to5Data = document.querySelector('#pesel3to5 .generatedData .buttonT
 const pesel3to5Btn = document.querySelector('#pesel3to5 .generateBtn')
 const dowodData = document.querySelector('#dowod .generatedData .buttonText')
 const dowodBtn = document.querySelector('#dowod .generateBtn')
+const paszportData = document.querySelector('#paszport .generatedData .buttonText')
+const paszportBtn = document.querySelector('#paszport .generateBtn')
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -87,6 +90,9 @@ dowodBtn.addEventListener('click', () => {
     let dowod = generateDowod()
     dowodData.textContent = dowod
 })
-
+paszportBtn.addEventListener('click', () => {
+    let paszport = generatePassport()
+    paszportData.textContent = paszport
+})
 // On page enter
 generateDataOnPageEnter()
