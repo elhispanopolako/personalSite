@@ -1,4 +1,5 @@
 import { generateDowod } from "./util/dowod-generator.js"
+import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
 
@@ -26,6 +27,8 @@ const dowodData = document.querySelector('#dowod .generatedData .buttonText')
 const dowodBtn = document.querySelector('#dowod .generateBtn')
 const paszportData = document.querySelector('#paszport .generatedData .buttonText')
 const paszportBtn = document.querySelector('#paszport .generateBtn')
+const nipData = document.querySelector('#nip .generatedData .buttonText')
+const nipBtn = document.querySelector('#nip .generateBtn')
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -93,6 +96,10 @@ dowodBtn.addEventListener('click', () => {
 paszportBtn.addEventListener('click', () => {
     let paszport = generatePassport()
     paszportData.textContent = paszport
+})
+nipBtn.addEventListener('click', () => {
+    let nip = generateNip()
+    nipData.textContent = nip
 })
 // On page enter
 generateDataOnPageEnter()
