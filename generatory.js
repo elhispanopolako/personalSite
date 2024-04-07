@@ -2,6 +2,7 @@ import { generateDowod } from "./util/dowod-generator.js"
 import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
+import { generateRegon9 } from "./util/regon-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
 const generatedDataBtn = document.querySelectorAll('.generatedData')
@@ -29,6 +30,9 @@ const paszportData = document.querySelector('#paszport .generatedData .buttonTex
 const paszportBtn = document.querySelector('#paszport .generateBtn')
 const nipData = document.querySelector('#nip .generatedData .buttonText')
 const nipBtn = document.querySelector('#nip .generateBtn')
+const regon9Data = document.querySelector('#regon9 .generatedData .buttonText')
+const regon9Btn = document.querySelector('#regon9 .generateBtn')
+
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -100,6 +104,10 @@ paszportBtn.addEventListener('click', () => {
 nipBtn.addEventListener('click', () => {
     let nip = generateNip()
     nipData.textContent = nip
+})
+regon9Btn.addEventListener('click', () => {
+    let regon9 = generateRegon9()
+    regon9Data.textContent = regon9
 })
 // On page enter
 generateDataOnPageEnter()
