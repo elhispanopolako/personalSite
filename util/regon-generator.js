@@ -14,3 +14,15 @@ export const generateRegon9 = () => {
 
     return baseRegon.join('')
 }
+
+export const generateRegon14 = () => {
+    let baseRegon = new Array(14).fill(1).map((num) => num * randomInt())
+    let sum = 0
+    for (let i = 0; i < baseRegon.length; i++) {
+        sum += baseRegon[i] * regon14Weights[i]
+    }
+    let controlWeight = sum % 11 == 10 ? 0 : sum % 11
+    baseRegon.push(controlWeight)
+
+    return baseRegon.join('')
+}
