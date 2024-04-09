@@ -16,7 +16,7 @@ export const generateRegon9 = () => {
 }
 
 export const generateRegon14 = () => {
-    let baseRegon = new Array(14).fill(1).map((num) => num * randomInt())
+    let baseRegon = new Array(13).fill(1).map((num) => num * randomInt())
     let sum = 0
     for (let i = 0; i < baseRegon.length; i++) {
         sum += baseRegon[i] * regon14Weights[i]
