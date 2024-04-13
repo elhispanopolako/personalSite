@@ -1,4 +1,5 @@
 import { generateDowod } from "./util/dowod-generator.js"
+import { generatePolishIBAN } from "./util/iban-generator.js"
 import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
@@ -34,6 +35,8 @@ const regon9Data = document.querySelector('#regon9 .generatedData .buttonText')
 const regon9Btn = document.querySelector('#regon9 .generateBtn')
 const regon14Data = document.querySelector('#regon14 .generatedData .buttonText')
 const regon14Btn = document.querySelector('#regon14 .generateBtn')
+const ibanData = document.querySelector('#iban .generatedData .buttonText')
+const ibanBtn = document.querySelector('#iban .generateBtn')
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -113,6 +116,10 @@ regon9Btn.addEventListener('click', () => {
 regon14Btn.addEventListener('click', () => {
     let regon14 = generateRegon14()
     regon14Data.textContent = regon14
+})
+ibanBtn.addEventListener('click', () => {
+    let iban = generatePolishIBAN()
+    ibanData.textContent = iban
 })
 // On page enter
 generateDataOnPageEnter()
