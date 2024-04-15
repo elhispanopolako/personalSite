@@ -4,6 +4,7 @@ import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
 import { generateRegon14, generateRegon9 } from "./util/regon-generator.js"
+import { generateWZONNumber } from "./util/wzon-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
 const generatedDataBtn = document.querySelectorAll('.generatedData')
@@ -41,6 +42,9 @@ const vinData = document.querySelector('#vin .generatedData .buttonText')
 const vinBtn = document.querySelector('#vin .generateBtn')
 const bicData = document.querySelector('#bic .generatedData .buttonText')
 const bicBtn = document.querySelector('#bic .generateBtn')
+const wzonData = document.querySelector('#wzon .generatedData .buttonText')
+const wzonBtn = document.querySelector('#wzon .generateBtn')
+
 
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -132,6 +136,10 @@ vinBtn.addEventListener('click', () => {
 bicBtn.addEventListener('click', () => {
     let bic = generateBIC()
     bicData.textContent = bic
+})
+wzonBtn.addEventListener('click', () => {
+    let wzon = generateWZONNumber()
+    wzonData.textContent = wzon
 })
 // On page enter
 generateDataOnPageEnter()
