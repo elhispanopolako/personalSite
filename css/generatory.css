@@ -61,6 +61,14 @@
 
 }
 
+.generatorContainer .generateBtn:hover {
+    filter: brightness(1.1);
+}
+
+.generatorContainer .generateBtn:active {
+    transform: scale(1.1);
+}
+
 .generatorContainer .icon {
     padding-left: 5px;
 }

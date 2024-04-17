@@ -46,14 +46,14 @@ const wzonData = document.querySelector('#wzon .generatedData .buttonText')
 const wzonBtn = document.querySelector('#wzon .generateBtn')
 
 
-generatedDataBtn.forEach((button) => {
-    button.addEventListener('click', () => {
-        let text = button.textContent.trim()
-        navigator.clipboard.writeText(text)
-        createToast(text)
-
+function changeFontSize() {
+    generatedDataBtn.forEach((button) => {
+        let btnText = button.textContent.trim()
+        if (btnText.length > 25) {
+            button.style.fontSize = "1.3rem"
+        }
     })
-})
+}
 
 function generateDataOnPageEnter() {
     generateBtn.forEach((button) => {
@@ -63,7 +63,6 @@ function generateDataOnPageEnter() {
 function createToast(text) {
     const toastEl = document.createElement('div')
     toastEl.classList.add('toast')
-    // toastEl.classList.add(getColor())
     toastEl.innerText = `${text} was copied to clipboard`
 
     toastCont.appendChild(toastEl)
@@ -72,6 +71,14 @@ function createToast(text) {
 }
 
 // Add eventListeners
+generatedDataBtn.forEach((button) => {
+    button.addEventListener('click', () => {
+        let text = button.textContent.trim()
+        navigator.clipboard.writeText(text)
+        createToast(text)
+
+    })
+})
 peselUnder18Btn.addEventListener('click', () => {
     let pesel = generatePeselUnder18()
     peselUnder18Data.textContent = pesel
@@ -143,3 +150,4 @@ wzonBtn.addEventListener('click', () => {
 })
 // On page enter
 generateDataOnPageEnter()
+changeFontSize()
