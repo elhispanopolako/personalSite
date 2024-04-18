@@ -47,6 +47,14 @@
 
 }
 
+.generatorContainer .generatedData:hover {
+    filter: brightness(1.05);
+}
+
+.generatorContainer .generatedData:active {
+    transform: scale(0.9);
+}
+
 .generatorContainer .generateBtn {
     padding: 10px;
     margin-bottom: 10px;
