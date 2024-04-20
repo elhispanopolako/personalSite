@@ -1,5 +1,5 @@
 import { generateDowod } from "./util/dowod-generator.js"
-import { generateBIC, generatePolishIBAN, generateVIN } from "./util/faker-generator.js"
+import { generateBIC, generatePolishIBAN, generateUUID, generateVIN } from "./util/faker-generator.js"
 import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
@@ -44,6 +44,9 @@ const bicData = document.querySelector('#bic .generatedData .buttonText')
 const bicBtn = document.querySelector('#bic .generateBtn')
 const wzonData = document.querySelector('#wzon .generatedData .buttonText')
 const wzonBtn = document.querySelector('#wzon .generateBtn')
+const uuidData = document.querySelector('#uuid .generatedData .buttonText')
+const uuidBtn = document.querySelector('#uuid .generateBtn')
+
 
 
 function changeFontSize() {
@@ -147,6 +150,10 @@ bicBtn.addEventListener('click', () => {
 wzonBtn.addEventListener('click', () => {
     let wzon = generateWZONNumber()
     wzonData.textContent = wzon
+})
+uuidBtn.addEventListener('click', () => {
+    let uuid = generateUUID()
+    uuidData.textContent = uuid
 })
 // On page enter
 generateDataOnPageEnter()

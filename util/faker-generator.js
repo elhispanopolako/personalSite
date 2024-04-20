@@ -10,3 +10,6 @@ export const generateVIN = () => {
 export const generateBIC = () => {
     return faker.finance.bic()
 }
+export const generateUUID = () => {
+    return faker.string.uuid()
+}
