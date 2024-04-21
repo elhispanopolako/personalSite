@@ -1,5 +1,5 @@
 import { generateDowod } from "./util/dowod-generator.js"
-import { generateBIC, generatePolishIBAN, generateUUID, generateVIN } from "./util/faker-generator.js"
+import { generateBIC, generatePolishIBAN, generateRandomIBAN, generateUUID, generateVIN } from "./util/faker-generator.js"
 import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
@@ -38,6 +38,8 @@ const regon14Data = document.querySelector('#regon14 .generatedData .buttonText'
 const regon14Btn = document.querySelector('#regon14 .generateBtn')
 const ibanData = document.querySelector('#iban .generatedData .buttonText')
 const ibanBtn = document.querySelector('#iban .generateBtn')
+const ibanRandomData = document.querySelector('#ibanRandom .generatedData .buttonText')
+const ibanRandomBtn = document.querySelector('#ibanRandom .generateBtn')
 const vinData = document.querySelector('#vin .generatedData .buttonText')
 const vinBtn = document.querySelector('#vin .generateBtn')
 const bicData = document.querySelector('#bic .generatedData .buttonText')
@@ -138,6 +140,18 @@ regon14Btn.addEventListener('click', () => {
 ibanBtn.addEventListener('click', () => {
     let iban = generatePolishIBAN()
     ibanData.textContent = iban
+})
+ibanRandomBtn.addEventListener('click', () => {
+    let ibanRandom = generateRandomIBAN()
+    console.log(ibanRandom.length)
+    switch (true) {
+        case (ibanRandom.length > 25):
+            ibanRandomData.style.fontSize = "1.2rem"
+            break;
+        default:
+            ibanRandomData.style.fontSize = "1.4rem"
+    }
+    ibanRandomData.textContent = ibanRandom
 })
 vinBtn.addEventListener('click', () => {
     let vin = generateVIN()
