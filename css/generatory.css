@@ -8,6 +8,32 @@
     --fontSizeDesktop: 1.5rem
 }
 
+#searchInput {
+    background-image: url('/css/searchicon.svg');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 20%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border-radius: 15px;
+    border: 2px solid var(--third-color);
+    color: var(--third-color);
+    font-weight: bold;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+#searchInput::placeholder {
+    color: var(--third-color);
+
+    font-weight: bold;
+}
+
+#searchInput:hover {
+    border: 2px solid var(--second-color)
+}
+
 .generatorContent {
     display: grid;
     gap: 20px;

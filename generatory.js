@@ -7,6 +7,8 @@ import { generateRegon14, generateRegon9 } from "./util/regon-generator.js"
 import { generateWZONNumber } from "./util/wzon-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
+const generatorTitles = document.querySelectorAll('.generatorContainer > h3')
+const searchInput = document.getElementById('searchInput')
 const generatedDataBtn = document.querySelectorAll('.generatedData')
 const generateBtn = document.querySelectorAll('.generateBtn')
 const toastCont = document.querySelector('.toasts')
@@ -50,6 +52,9 @@ const uuidData = document.querySelector('#uuid .generatedData .buttonText')
 const uuidBtn = document.querySelector('#uuid .generateBtn')
 
 
+function searchGenerators() {
+
+}
 
 function changeFontSize() {
     generatedDataBtn.forEach((button) => {
