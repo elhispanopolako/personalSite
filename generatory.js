@@ -8,7 +8,8 @@ import { generateWZONNumber } from "./util/wzon-generator.js"
 
 // Tu będą funkcje które będziemy generować dla strony z generatorami
 const generatorTitles = document.querySelectorAll('.generatorContainer > h3')
-const searchInput = document.getElementById('searchInput')
+const generatorContainer = document.querySelectorAll('.generatorContainer')
+const searchInput = document.querySelector('#searchInput')
 const generatedDataBtn = document.querySelectorAll('.generatedData')
 const generateBtn = document.querySelectorAll('.generateBtn')
 const toastCont = document.querySelector('.toasts')
@@ -53,6 +54,18 @@ const uuidBtn = document.querySelector('#uuid .generateBtn')
 
 
 function searchGenerators() {
+    let searchString = searchInput.value.toUpperCase().trim()
+    let textValue
+    console.log(generatorTitles.length)
+    for (let i = 0; i < generatorTitles.length; i++) {
+        textValue = generatorTitles[i].textContent.toUpperCase()
+        if (textValue.indexOf(searchString) > -1) {
+            generatorContainer[i].style.display = ""
+        } else {
+            generatorContainer[i].style.display = "none"
+        }
+
+    }
 
 }
 
@@ -81,6 +94,8 @@ function createToast(text) {
 }
 
 // Add eventListeners
+searchInput.addEventListener('keyup', searchGenerators)
+
 generatedDataBtn.forEach((button) => {
     button.addEventListener('click', () => {
         let text = button.textContent.trim()
@@ -177,3 +192,4 @@ uuidBtn.addEventListener('click', () => {
 // On page enter
 generateDataOnPageEnter()
 changeFontSize()
+
