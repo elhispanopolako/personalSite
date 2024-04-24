@@ -187,6 +187,7 @@ wzonBtn.addEventListener('click', () => {
 })
 uuidBtn.addEventListener('click', () => {
     let uuid = generateUUID()
+    uuidData.style.fontSize = "1.05rem"
     uuidData.textContent = uuid
 })
 // On page enter
