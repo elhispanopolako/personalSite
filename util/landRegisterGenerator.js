@@ -1,3 +1,5 @@
+import { randomInt } from "./helper";
+
 // https://ekw.plus/blog/cyfra-kontrolna-ksiegi-wieczystej-co-to-jest-i-jak-ja-ustalic
 const LETTER_MAP = {
     'A': 11,
@@ -377,3 +379,22 @@ const cityCodes = [
     "BB1Z"
 ]
 const WEIGHTS = [1, 3, 7, 1, 3, 7, 1, 3, 7];
+
+const randomLandRegister = () => {
+    let randomCityCode = Math.floor(Math.random() * cityCodes.length)
+    let pickedCityCode = cityCodes[randomCityCode]
+    let pickedCityCodeNumbers = pickedCityCode.split('').map((char) => {
+        let newChar
+        if (LETTER_MAP.hasOwnProperty(char)) {
+            newChar = LETTER_MAP[char]
+        } else {
+            newChar = char
+        }
+        return newChar
+    })
+    console.log(pickedCityCodeNumbers)
+    let random8Numbers = new Array(8).fill(1).map((x) => x * randomInt())
+    let rawLandRegister = pickedCityCodeNumbers + random8Numbers.toString()
+    console.log(rawLandRegister)
+
+}
