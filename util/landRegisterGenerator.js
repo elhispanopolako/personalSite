@@ -1,4 +1,4 @@
-import { randomInt } from "./helper";
+import { randomInt } from "./helper.js";
 
 // https://ekw.plus/blog/cyfra-kontrolna-ksiegi-wieczystej-co-to-jest-i-jak-ja-ustalic
 const LETTER_MAP = {
@@ -378,9 +378,9 @@ const cityCodes = [
     "PL1Z",
     "BB1Z"
 ]
-const WEIGHTS = [1, 3, 7, 1, 3, 7, 1, 3, 7];
+const WEIGHTS = [1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7];
 
-const randomLandRegister = () => {
+export const generateLandRegister = () => {
     let randomCityCode = Math.floor(Math.random() * cityCodes.length)
     let pickedCityCode = cityCodes[randomCityCode]
     let pickedCityCodeNumbers = pickedCityCode.split('').map((char) => {
@@ -388,13 +388,21 @@ const randomLandRegister = () => {
         if (LETTER_MAP.hasOwnProperty(char)) {
             newChar = LETTER_MAP[char]
         } else {
-            newChar = char
+            newChar = +char
         }
         return newChar
     })
-    console.log(pickedCityCodeNumbers)
     let random8Numbers = new Array(8).fill(1).map((x) => x * randomInt())
-    let rawLandRegister = pickedCityCodeNumbers + random8Numbers.toString()
-    console.log(rawLandRegister)
+    let rawLandRegister = pickedCityCodeNumbers.concat(random8Numbers)
+    let sumDigit = getSumDigit(rawLandRegister, WEIGHTS)
+    return `${pickedCityCode}/${random8Numbers.join('')}/${sumDigit}`
 
+}
+
+const getSumDigit = (rawLandRegister, weights) => {
+    let sum = 0
+    for (let i = 0; i < rawLandRegister.length; i++) {
+        sum += rawLandRegister[i] * weights[i]
+    }
+    return sum % 10
 }

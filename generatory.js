@@ -1,5 +1,6 @@
 import { generateDowod } from "./util/dowod-generator.js"
 import { generateBIC, generatePolishIBAN, generateRandomIBAN, generateUUID, generateVIN } from "./util/faker-generator.js"
+import { generateLandRegister } from "./util/landRegisterGenerator.js"
 import { generateNip } from "./util/nip-generator.js"
 import { generatePassport } from "./util/passport-generator.js"
 import { generatePeselAfter18, generatePeselFor6YearsOld, generatePeselForBetween10and20YearsOld, generatePeselForBetween1and3YearsOld, generatePeselForBetween21and24YearsOld, generatePeselForBetween3and5YearsOld, generatePeselForBetween7and9YearsOld, generatePeselUnder18 } from "./util/pesel-generator.js"
@@ -51,7 +52,8 @@ const wzonData = document.querySelector('#wzon .generatedData .buttonText')
 const wzonBtn = document.querySelector('#wzon .generateBtn')
 const uuidData = document.querySelector('#uuid .generatedData .buttonText')
 const uuidBtn = document.querySelector('#uuid .generateBtn')
-
+const landRegisterData = document.querySelector('#landRegister .generatedData .buttonText')
+const landRegisterBtn = document.querySelector('#landRegister .generateBtn')
 
 function searchGenerators() {
     let searchString = searchInput.value.toUpperCase().trim()
@@ -189,6 +191,10 @@ uuidBtn.addEventListener('click', () => {
     let uuid = generateUUID()
     uuidData.style.fontSize = "1.05rem"
     uuidData.textContent = uuid
+})
+landRegisterBtn.addEventListener('click', () => {
+    let landRegister = generateLandRegister()
+    landRegisterData.textContent = landRegister
 })
 // On page enter
 generateDataOnPageEnter()
