@@ -10,6 +10,7 @@ import { generateWZONNumber } from "./util/wzon-generator.js"
 // Tu będą funkcje które będziemy generować dla strony z generatorami
 const generatorTitles = document.querySelectorAll('.generatorContainer > h3')
 const generatorContainer = document.querySelectorAll('.generatorContainer')
+const loader = document.querySelector('.loader')
 const searchInput = document.querySelector('#searchInput')
 const generatedDataBtn = document.querySelectorAll('.generatedData')
 const generateBtn = document.querySelectorAll('.generateBtn')
@@ -70,6 +71,9 @@ function searchGenerators() {
     }
 
 }
+function hideLoader() {
+    loader.style.display = 'none'
+}
 
 function changeFontSize() {
     generatedDataBtn.forEach((button) => {
@@ -78,6 +82,7 @@ function changeFontSize() {
             button.style.fontSize = "1.3rem"
         }
     })
+    setTimeout(hideLoader, 1000)
 }
 
 function generateDataOnPageEnter() {
