@@ -17,10 +17,10 @@
     <div class="loader">
         <img src="css/loader.svg" alt="loader">
     </div>
-    <h1 style="text-align: center;">Generatory testowe, ...in progress</h1>
+    <h1 style="text-align: center;">Generatory testowe</h1>
     <p style="text-align: center;">Generator peselów,dowodu,mdowodu,paszportu,numer decyzji
-        WZON,NIP,REGON,IBAN,KRS,nr ksiąg wieczystych</p>
-    <p>TODO: Wyszukiwanie, poprawa styli, i dodanie więcej generatorów</p>
+        WZON,NIP,REGON,IBAN,BIC,VIN,UUID,nr ksiąg wieczystych</p>
+    <p style="text-align: center;">TODO: Testy</p>
     <div class="toasts"></div>
     <input type="text" id="searchInput" placeholder="Szukaj po nazwie generatora..">
     <div class="generatorContent">
@@ -98,7 +98,9 @@
         </div>
         <div class="generatorContainer" id="mDowod">
             <h3>Mdowód</h3>
-            <button class="generatedData">MAHA59135<span><i class="fa-regular fa-copy"></i></span>
+            <button class="generatedData">
+                <span class="buttonText">MAHA59135</span>
+                <span class="icon"><i class="fa-regular fa-copy"></i></span>
             </button>
             <button class="generateBtn">Generuj</button>
         </div>
