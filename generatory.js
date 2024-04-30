@@ -1,4 +1,4 @@
-import { generateDowod } from "./util/dowod-generator.js"
+import { generateDowod, generateMDowod } from "./util/dowod-generator.js"
 import { generateBIC, generatePolishIBAN, generateRandomIBAN, generateUUID, generateVIN } from "./util/faker-generator.js"
 import { generateLandRegister } from "./util/landRegisterGenerator.js"
 import { generateNip } from "./util/nip-generator.js"
@@ -33,6 +33,8 @@ const pesel3to5Data = document.querySelector('#pesel3to5 .generatedData .buttonT
 const pesel3to5Btn = document.querySelector('#pesel3to5 .generateBtn')
 const dowodData = document.querySelector('#dowod .generatedData .buttonText')
 const dowodBtn = document.querySelector('#dowod .generateBtn')
+const mdowodData = document.querySelector('#mDowod .generatedData .buttonText')
+const mdowodBtn = document.querySelector('#mDowod .generateBtn')
 const paszportData = document.querySelector('#paszport .generatedData .buttonText')
 const paszportBtn = document.querySelector('#paszport .generateBtn')
 const nipData = document.querySelector('#nip .generatedData .buttonText')
@@ -148,6 +150,10 @@ dowodBtn.addEventListener('click', () => {
     let dowod = generateDowod()
     dowodData.textContent = dowod
 })
+mdowodBtn.addEventListener('click', () => {
+    let mdowod = generateMDowod()
+    mdowodData.textContent = mdowod
+})
 paszportBtn.addEventListener('click', () => {
     let paszport = generatePassport()
     paszportData.textContent = paszport
@@ -170,7 +176,6 @@ ibanBtn.addEventListener('click', () => {
 })
 ibanRandomBtn.addEventListener('click', () => {
     let ibanRandom = generateRandomIBAN()
-    console.log(ibanRandom.length)
     switch (true) {
         case (ibanRandom.length > 25):
             ibanRandomData.style.fontSize = "1.2rem"
