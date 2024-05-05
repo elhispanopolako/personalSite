@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('/personalSite');
+    await page.goto('');
     await expect(page).toHaveTitle(/Personal Site/);
     await expect(page.locator('.homeInfo h1')).toBeVisible();
 

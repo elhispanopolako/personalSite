@@ -4,8 +4,9 @@
   "description": "Welcome to my personal portfolio site! This repository contains the code and assets for my online portfolio where I showcase my projects, skills, and experiences. It's created for a [100comitow](https://100commitow.pl/repozytoria) challenge. Demo link: https://elhispanopolako.github.io/personalSite/",
   "main": "index.js",
   "scripts": {
-    "play-open": "npx playwright test --ui",
-    "play-debug": "npx playwright test --debug",
+    "play-test": "npx playwright test",
+    "play-open": "yarn play-test --ui",
+    "play-debug": "yarn play-test --debug",
     "play-report": "npx playwright show-report"
   },
   "keywords": [],
