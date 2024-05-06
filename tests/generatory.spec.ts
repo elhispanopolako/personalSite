@@ -12,7 +12,7 @@ const searchTests = [
 ]
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('http://127.0.0.1:5500/generatory.html');
+    await page.goto('/generatory.html');
     await expect(page).toHaveTitle(/Generatory testowe/);
     await expect(page.locator('h1')).toBeVisible();
 })
