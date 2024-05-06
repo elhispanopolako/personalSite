@@ -65,9 +65,13 @@ function searchGenerators() {
     for (let i = 0; i < generatorTitles.length; i++) {
         textValue = generatorTitles[i].textContent.toUpperCase()
         if (textValue.indexOf(searchString) > -1) {
+            generatorContainer[i].hidden = false
             generatorContainer[i].style.display = ""
+
         } else {
+            generatorContainer[i].hidden = true
             generatorContainer[i].style.display = "none"
+
         }
 
     }
