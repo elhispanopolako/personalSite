@@ -67,6 +67,6 @@ export const generateDowod = () => {
 };
 
 export const generateMDowod = () => {
-    let mdowody = ['MAZS24876', 'MAGH52169', 'MAHT68589', 'MAXV84299', 'MAXA17687', 'MAKF68115', 'MATY43695', 'MAVV41656', 'MAGA63342', 'MAHA59135']
+    let mdowody = ['MAZS24876', 'MAGH52169', 'MAHT68589', 'MAXV84299', 'MAXA17687', 'MAKF68115', 'MATY43695', 'MAVV41656', 'MAGA63342', 'MAHA59135', 'MAYE42853', 'MAZT66792']
     return mdowody[Math.floor(Math.random() * mdowody.length)]
 }
