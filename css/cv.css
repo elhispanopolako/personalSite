@@ -1,0 +1,24 @@
+.titleContainer {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+}
+
+.profilePhoto img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+}
+
+.skillsContainer {
+    grid-column: 1 / 2;
+}
+
+.workHistoryContainer {
+    grid-column: 2/3;
+    grid-row: 1/ span 5;
+}
