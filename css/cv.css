@@ -1,12 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #EEEEEE;
+}
+
+.leftSide {
+    background-color: #DDDDDD;
+    position: relative;
+    width: 100%;
+    bottom: 10px;
+    right: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.rightSide {
+    margin-left: 20px;
+}
+
+.headers h1 {
+    font-size: 4rem;
+    margin-bottom: 0px;
+}
+
+.headers h2 {
+    margin-top: 0;
+}
+
 .titleContainer {
     display: grid;
     grid-template-columns: 500px 1fr;
+}
+
+.profilePhoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profilePhoto img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
+
 }
 
 .gridContainer {
@@ -21,4 +58,9 @@
 .workHistoryContainer {
     grid-column: 2/3;
     grid-row: 1/ span 5;
+}
+
+.coursesContainer {
+    grid-column: 2/3;
+    grid-row: span 2;
 }
