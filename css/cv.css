@@ -28,6 +28,20 @@ body {
     margin-top: 0;
 }
 
+.personalInfo .contact {
+    list-style-type: none;
+}
+
+.personalInfo .contact a {
+    text-decoration: none;
+    color: #000;
+}
+
+.personalInfo .contact li:hover {
+    transform: scale(1.05);
+    transition-duration: .3s;
+}
+
 .titleContainer {
     display: grid;
     grid-template-columns: 500px 1fr;
