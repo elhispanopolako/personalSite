@@ -69,12 +69,61 @@ body {
     grid-column: 1 / 2;
 }
 
+li:hover {
+    transform: scale(1.05);
+    transition-duration: .3s;
+    cursor: context-menu;
+}
+
+.certificates {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    left: 30px;
+}
+
+.certificates:hover {
+    transform: scale(1.02);
+    transition-duration: .3s;
+}
+
+.workContainer h4 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.workContainer .companyName {
+    margin-top: 0;
+}
+
 .workHistoryContainer {
     grid-column: 2/3;
     grid-row: 1/ span 5;
+    width: 90%;
 }
 
 .coursesContainer {
     grid-column: 2/3;
     grid-row: span 2;
+}
+
+.coursesContainer .course {
+    display: grid;
+    width: 90%;
+    align-items: center;
+    grid-template-columns: 100px 1fr;
+}
+
+.coursesContainer .course p {
+    grid-column: span 2;
+    margin: 0;
+}
+
+.coursesContainer .course ul {
+    grid-column: span 2;
+}
+
+.course li a {
+    text-decoration: none;
+    color: #000;
 }
