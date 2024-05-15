@@ -2,4 +2,40 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 32px;
+    justify-items: center;
+    align-items: center;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #86B6F6;
+    border-radius: 20px;
+}
+
+article img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tags li {
+    font-weight: 300;
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+    font-size: .90rem;
+    line-height: 1rem;
+    padding: 5px 15px;
+    background-color: rgb(243 244 246 / var(--tw-text-opacity));
+    border-radius: 9999px;
 }
