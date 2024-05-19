@@ -15,6 +15,10 @@ body {
     margin-right: 10px;
 }
 
+i {
+    color: #000;
+}
+
 .rightSide {
     margin-left: 20px;
 }

@@ -101,21 +101,28 @@
 
         /* Progress Bar */
         .progress-range {
-
+            height: 8px;
+            width: calc(100% - 30px);
+            background: rgba(202, 202, 202, 0.5);
             margin: auto;
             border-radius: 10px;
             position: absolute;
             left: 15px;
             top: 15px;
             cursor: pointer;
+            transition: height 0.1s ease-in-out;
 
+        }
+
+        .progress-range:hover {
+            height: 10px;
         }
 
 
 
         .progress-bar {
             background: var(--primary-color);
-            width: 50%;
+            width: 20%;
             height: 100%;
             border-radius: 10px;
             transition: all 0.5s ease;
@@ -184,16 +191,24 @@
             margin-right: 15px;
         }
 
+        select,
+        option {
+            cursor: pointer;
+        }
 
 
         select {
-
+            background-color: transparent;
             color: var(--font-color);
             border: none;
             font-size: 18px;
             position: relative;
             top: -2.5px;
             border-radius: 5px;
+        }
+
+        select:focus {
+            outline: none;
         }
 
 
@@ -344,7 +359,7 @@
                         </div>
                         <div class="time">
                             <span class="time-elapsed">00:00 /</span>
-                            <span class="time-elapsed">02:37</span>
+                            <span class="time-duration">02:37</span>
                         </div>
                         <div class="fullscreen">
                             <i class="fas fa-expand"></i>
@@ -357,14 +372,46 @@
 
     <!-- Script -->
     <script>
-
-
+        const video = document.querySelector('video')
+        const progressRange = document.querySelector('.progress-range')
+        const progressBar = document.querySelector('.progress-bar')
+        const playBtn = document.getElementById('play-btn')
+        const volume = document.getElementById('volume-icon')
+        const volumeRange = document.querySelector('.volume-range')
+        const volumeBar = document.querySelector('.volume-bar')
+        const currentTime = document.querySelector('.time-elapsed')
+        const duration = document.querySelector('.time-duration')
+        const fullscreenBtn = document.querySelector('.fullscreen')
         // Play & Pause ----------------------------------- //
+        function showPlayIcon() {
+            playBtn.classList.replace('fa-pause', 'fa-play')
+            playBtn.setAttribute('title', 'Play')
+        }
+        function togglePlay() {
+            if (video.paused) {
+                video.play()
+                playBtn.classList.replace('fa-play', 'fa-pause')
+                playBtn.setAttribute('title', 'Pause')
+            } else {
+                video.pause()
+                showPlayIcon()
 
 
+            }
+        }
 
         // Progress Bar ---------------------------------- //
+        function displayTime(time) {
+            const minutes = Math.floor(time / 60).toString().padStart(2, '0')
+            let seconds = Math.floor(time % 60).toString().padStart(2, '0')
+            return `${minutes}:${seconds}`
 
+        }
+        function updateProgress() {
+            progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`
+            currentTime.textContent = `${displayTime(video.currentTime)} /`
+            duration.textContent = `${displayTime(video.duration)}`
+        }
 
 
         // Volume Controls --------------------------- //
@@ -376,7 +423,12 @@
 
 
         // Fullscreen ------------------------------- //
-
+        // Event Listeners
+        playBtn.addEventListener('click', togglePlay)
+        video.addEventListener('click', togglePlay)
+        video.addEventListener('ended', showPlayIcon)
+        video.addEventListener('timeupdate', updateProgress)
+        video.addEventListener('canplay', updateProgress)
 
 
     </script>
