@@ -352,9 +352,9 @@
                             <select name="playbackRate" class="player-speed">
                                 <option value="0.5">0.5 x</option>
                                 <option value="0.75">0.75 x</option>
-                                <option value="1">1 x</option>
+                                <option selected="selected" value="1">1 x</option>
                                 <option value="1.5">1.5 x</option>
-                                <option value="0.5">2 x</option>
+                                <option value="2">2 x</option>
                             </select>
                         </div>
                         <div class="time">
@@ -383,6 +383,8 @@
         const currentTime = document.querySelector('.time-elapsed')
         const duration = document.querySelector('.time-duration')
         const fullscreenBtn = document.querySelector('.fullscreen')
+        const speed = document.querySelector('.player-speed')
+        const player = document.querySelector('.player')
         // Play & Pause ----------------------------------- //
         function showPlayIcon() {
             playBtn.classList.replace('fa-pause', 'fa-play')
@@ -420,6 +422,7 @@
         }
 
         // Volume Controls --------------------------- //
+        let lastVolume = 1
         function changeVolume(e) {
             let volume = e.offsetX / volumeRange.offsetWidth
             if (volume < 0.1) {
@@ -437,15 +440,68 @@
             } else if (volume == 0) {
                 volumeIcon.classList.add('fas', 'fa-volume-off')
             }
+            lastVolume = volume
+        }
 
+        function toggleMute() {
+            volumeIcon.className = ''
+            if (video.volume) {
+                lastVolume = video.volume
+                video.volume = 0
+                volumeBar.style.width = 0
+                volumeIcon.classList.add('fas', 'fa-volume-mute')
+                volumeIcon.setAttribute('title', 'Unmute')
+            } else {
+                video.volume = lastVolume
+                volumeBar.style.width = `${lastVolume * 100}%`
+                if (lastVolume > 0.7) {
+                    volumeIcon.classList.add('fas', 'fa-volume-up')
+                } else if (lastVolume < 0.7) {
+                    volumeIcon.classList.add('fas', 'fa-volume-down')
+                }
+            }
         }
 
 
         // Change Playback Speed -------------------- //
-
+        function changeSpeed() {
+            video.playbackRate = speed.value
+        }
 
 
         // Fullscreen ------------------------------- //
+        function openFullScreen(elem) {
+            if (elem.requestFullScreen) {
+                elem.requestFullScreen()
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen()
+            } else if (elem.webkitRequestFullScreen) {
+                elem.webkitRequestFullScreen()
+            } else if (elem.msRequestFullScreen) {
+                elem.msRequestFullScreen()
+            }
+            video.classList.add('video-fullscreen')
+        }
+        function closeFullScreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen()
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen()
+            } else if (document.webkitExitFullScreen) {
+                document.webkitExitFullScreen()
+            } else if (document.msExitFullScreen) {
+                document.msExitFullScreen()
+            }
+            video.classList.remove('video-fullscreen')
+
+        }
+        let fullscreen = false
+        function toggleFullScreen() {
+            !fullscreen ? openFullScreen(player) : closeFullScreen()
+
+            fullscreen = !fullscreen
+        }
+
         // Event Listeners
         playBtn.addEventListener('click', togglePlay)
         video.addEventListener('click', togglePlay)
@@ -454,7 +510,9 @@
         video.addEventListener('canplay', updateProgress)
         progressRange.addEventListener('click', setProgress)
         volumeRange.addEventListener('click', changeVolume)
-
+        volumeIcon.addEventListener('click', toggleMute)
+        speed.addEventListener('change', changeSpeed)
+        fullscreenBtn.addEventListener('click', toggleFullScreen)
     </script>
 </body>
 
