@@ -38,7 +38,7 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #0009;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     border-radius: 20px;
     max-width: 400px;
 }
@@ -108,4 +108,8 @@ article img {
 
 .links li:hover {
     background-color: #0000005b;
+}
+
+.blur {
+    filter: blur(0.6rem);
 }
