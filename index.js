@@ -10,9 +10,9 @@ const skills = document.querySelectorAll('.skillsContainer .skill')
 const homeBtn = document.getElementById('homeBtn')
 let body = document.querySelector('body')
 // Home
-homeBtn.onclick = () => {
-    location.hash = '#contact'
-}
+homeBtn.addEventListener('click', () => {
+    location.hash = '#about'
+})
 
 // Projects
 const projectsJSON = [

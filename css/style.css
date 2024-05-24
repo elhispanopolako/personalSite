@@ -147,6 +147,10 @@ nav a {
     font-size: var(--fontSizeDesktop);
 }
 
+a.btn {
+    align-self: center;
+}
+
 /* CSS button */
 .homeButton {
     cursor: pointer;
@@ -195,12 +199,47 @@ nav a {
     border-radius: 50%;
 }
 
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 60vh;
+}
+
+.about h2 {
+    grid-column: span 2;
+    justify-self: center;
+    align-self: center;
+}
+
+.about p {
+    max-width: 700px;
+    padding: 0 50px;
+    margin-top: 0;
+}
+
+.about .navigationButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    gap: 110px;
+    align-content: start;
+}
+
+.navigationButtonsContainer a {
+    align-self: flex-start;
+}
+
+.about .navigationButtonsContainer button {
+    width: 300px;
+}
+
 /* Portfolio section */
 .portfolio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 50vh;
 }
 
 .portfolio h2 {

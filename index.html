@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav data-aos="fade-down" data-aos-delay="1000" class="menu">
+    <nav style="display: none;" data-aos="fade-down" data-aos-delay="1000" class="menu">
         <ul>
             <li class="menuItem"><a href="#home"><i class="fas fa-home"></i> Home</a></li>
             <li class="menuItem"><a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
@@ -34,14 +34,57 @@
             <div data-aos="fade-up" class="homeInfo">
                 <p class="homeWelcome">Welcome! &#128075;</p>
                 <h1>I'm Tadeusz David Woźniak</h1>
-                <p>I'm a QA Engineer/Low Code Developer based in Poland</p>
-                <button id="homeBtn" class="homeButton">Get in touch </button>
+                <!-- <p>I'm a QA Engineer/Low Code Developer based in Poland</p> -->
+                <a class="btn" href="#about">
+                    <button id="homeBtn" class="homeButton">Know more </button>
+                </a>
             </div>
             <div data-aos="fade-left" data-aos-delay="1500" class="profilePhoto">
                 <img src="files/me.jpeg" alt="profile photo">
             </div>
         </div>
-        <div id="portfolio" class="portfolio">
+        <div id="about" class="about">
+            <h2 data-aos="zoom-in">ABOUT ME</h2>
+            <div>
+                <p> I am a dedicated <b>Low Code Developer</b> and <b>QA Engineer</b> with over two years of experience
+                    in
+                    dynamic
+                    and
+                    agile
+                    environments. My career has been marked by a commitment to quality and innovation, demonstrated
+                    through
+                    my dual roles in quality assurance and low code development.
+                </p>
+                <p>
+                    As a <b>QA Engineer</b>, I excel in conducting comprehensive manual tests and building robust
+                    automation
+                    frameworks from scratch. My attention to detail and methodical approach ensure that each product
+                    meets
+                    the highest standards of quality and reliability.
+                </p>
+                <p>
+                    In my role as a <b>Low Code Developer</b>, I have successfully completed multiple complex banking
+                    processes
+                    using the Eximee low code platform. My ability to streamline development processes and create
+                    efficient
+                    solutions has consistently resulted in enhanced operational efficiency and client satisfaction.
+                </p>
+            </div>
+            <div class="navigationButtonsContainer">
+                <a class="btn" href="/projekty.html" target="_blank">
+                    <button id="portfolioBtn" class="homeButton">View Portfolio </button>
+                </a>
+                <a class="btn" href="#skills">
+                    <button id="skillBtn" class="homeButton">Check Skills </button>
+                </a>
+                <a class="btn" href="#contact">
+                    <button id="contactBtn" class="homeButton">Contact me </button>
+                </a>
+
+            </div>
+
+        </div>
+        <div id="portfolio" class="portfolio" style="display: none;">
             <h2 data-aos="zoom-in">PORTFOLIO</h2>
             <div class="portfolioContainer" data-aos="zoom-in">
             </div>
