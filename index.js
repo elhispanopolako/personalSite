@@ -9,10 +9,24 @@ const lessIcon = document.querySelector('#showMore .less')
 const skills = document.querySelectorAll('.skillsContainer .skill')
 const homeBtn = document.getElementById('homeBtn')
 let body = document.querySelector('body')
+let scrollToTopBtn = document.querySelector('.arrowUp');
 // Home
-homeBtn.addEventListener('click', () => {
-    location.hash = '#about'
-})
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function checkScroll() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopBtn.classList.add("showArrow");
+    } else {
+        scrollToTopBtn.classList.remove("showArrow");
+    }
+}
+
 
 // Projects
 const projectsJSON = [
@@ -25,7 +39,10 @@ const projectsJSON = [
 // On init
 displayProjects()
 addHoverToSkills()
-
+scrollToTopBtn.addEventListener('click', scrollToTop)
+window.onscroll = function () {
+    checkScroll();
+};
 showMoreButton.addEventListener('click', () => {
     content.classList.toggle('showMore')
     moreNavs.classList.toggle('show')

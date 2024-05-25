@@ -27,6 +27,31 @@ body {
     overflow: hidden;
 }
 
+/* Arrow up */
+.arrowUp {
+    opacity: 0;
+    position: fixed;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    bottom: 30px;
+    right: 30px;
+    z-index: 101;
+    transition: opacity 0.5s;
+}
+
+.showArrow {
+    opacity: 1;
+}
+
+.arrowUp i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.arrowUp i:hover {
+    transform: scale(1.3);
+}
 
 /* Navbar  */
 nav {
@@ -147,7 +172,7 @@ nav a {
     font-size: var(--fontSizeDesktop);
 }
 
-a.btn {
+.btn {
     align-self: center;
 }
 
