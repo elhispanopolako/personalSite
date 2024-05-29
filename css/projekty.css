@@ -43,6 +43,11 @@ article {
     max-width: 400px;
 }
 
+article:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
 .projectDetails h2 {
     margin: 0;
 }
