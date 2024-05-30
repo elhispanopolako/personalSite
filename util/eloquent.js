@@ -51,4 +51,57 @@ function cheesBoard() {
         console.log(result)
     }
 }
+// Funciones recursivas
+function encontrarSolucion(objetivo) {
+    function encontrar(actual, historial) {
+        if (actual === objetivo) {
+            return historial;
+        } else if (actual > objetivo) {
+            return null;
+        } else {
+            return encontrar(actual + 5, `(${historial} + 5)`) ??
+                encontrar(actual * 3, `(${historial} * 3)`);
+        }
+    }
+    return encontrar(1, "1");
+}
 
+console.log(encontrarSolucion(24));
+
+//Minimo 
+function min(x, y) {
+    return Math.min(x, y)
+}
+console.log(min(0, 10));
+console.log(min(0, -10));
+// Recursion
+function isEven(number) {
+    return number % 2 == 0 ? true : false
+}
+function isEven2(number) {
+    if (number == 0) {
+        return true
+    } else if (number == 1) {
+        return false
+    } else if (number < 0) {
+        return isEven2(number + 2)
+    } else {
+        return isEven2(number - 2)
+    }
+}
+// Contando frijoles
+
+function countChar(string, char) {
+    let res = 0
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] == char) {
+            res++
+        }
+    }
+    return res
+}
+let countBs = (string) => {
+    return countChar(string, 'B')
+}
+console.log(countBs("BOB"));
+console.log(countChar("kakkerlak", "k"));
