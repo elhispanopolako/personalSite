@@ -105,3 +105,5 @@ let countBs = (string) => {
 }
 console.log(countBs("BOB"));
 console.log(countChar("kakkerlak", "k"));
+
+// Chapter 4. Objetos y arrays
