@@ -160,3 +160,49 @@ for (let event of journalEvents(JOURNAL)) {
         console.log(event + ":", correlation);
     }
 }
+// La suma de un rango
+function range(start, end, step = start < end ? 1 : -1) {
+    let result = []
+    if (step < 0) {
+        for (let i = start; i <= end; i = i + step) {
+            result.push(i)
+        }
+    } else {
+        for (let i = start; i <= end; i = i + step) {
+            result.push(i)
+        }
+    }
+
+    return result
+}
+function sum(arr) {
+    return arr.reduce((x, y) => x + y)
+}
+console.log(range(1, 10));
+console.log(range(5, 2, -1));
+console.log(sum(range(1, 10)));
+
+// Reversión de un array
+
+function reverseArray(arr) {
+    let newArr = []
+    for (let item of arr) {
+        newArr.unshift(item)
+    }
+    return newArr
+}
+let myArray = ["A", "B", "C"];
+console.log(reverseArray(myArray));
+
+function reverseArrayInPlace(array) {
+    for (let i = 0; i < Math.floor(array.length / 2); i++) {
+        let old = array[i];
+        array[i] = array[array.length - 1 - i];
+        array[array.length - 1 - i] = old;
+    }
+    return array;
+}
+
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
