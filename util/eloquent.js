@@ -1418,3 +1418,42 @@ function textScripts(text) {
 }
 console.log(textScripts('英国的狗说"woof", 俄罗斯的狗说"тяв"'));
 // → 61% Han, 22% Latin, 17% Cyrillic
+
+// Aplanamiento
+
+let arrays = [[1, 2, 3], [4, 5], [6]];
+arrays.reduce((a, b) => a.concat(b))
+
+// Tu propio bucle
+
+function loop(valor, prueba, actualizacion, cuerpo) {
+    for (let i = valor; prueba(i); i = actualizacion(i)) {
+        cuerpo(i)
+    }
+}
+
+loop(3, n => n > 0, n => n - 1, console.log);
+// Every 
+
+function every(array, test) {
+    return !array.some(el => !test(el))
+}
+console.log(every([1, 3, 5], n => n < 10));
+console.log(every([2, 4, 16], n => n < 10));
+console.log(every([], n => n < 10));
+
+// Dirección de escritura dominante
+
+function dominantDirection(text) {
+    let counted = countBy(text, char => {
+        let script = characterScript(char.codePointAt(0));
+        return script ? script.direction : "none";
+    }).filter(({ name }) => name != "none");
+    if (counted === 0) {
+        return "ltr"
+    }
+    return counted.reduce((a, b) => a.count > b.count ? a : b).name
+
+}
+console.log(dominantDirection("Hello! مساء الخي"));
+console.log(dominantDirection("Hey, مساء الخير"));
