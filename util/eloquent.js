@@ -1458,3 +1458,58 @@ function dominantDirection(text) {
 console.log(dominantDirection("Hello! مساء الخي"));
 console.log(dominantDirection("Hey, مساء الخير"));
 // Chapter 6 La Vida Secreta de los Objetos
+
+// Un tipo de vector
+
+class Vec {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y
+    }
+    get length() {
+        return Math.sqrt((this.x ** 2 + this.y ** 2))
+    }
+    plus(other) {
+        return new Vec(this.x + other.x, this.y + other.y)
+    }
+    minus(other) {
+        return new Vec(this.x - other.x, this.y - other.y)
+    }
+}
+console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+// → Vec{x: 3, y: 5}
+console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+// → Vec{x: -1, y: -1}
+console.log(new Vec(3, 4).length);
+// → 5
+
+// Grupos
+class Group {
+    #members = []
+    static from(arr) {
+        let group = new Group
+        for (let item of arr) {
+            group.add(item)
+        }
+        return group
+    }
+    has(element) {
+        return this.#members.includes(element)
+    }
+    add(element) {
+        if (!this.has(element)) {
+            return this.#members.push(element)
+        }
+    }
+    delete(element) {
+        return this.#members = this.#members.filter(item => item != element)
+    }
+}
+let group = Group.from([10, 20]);
+console.log(group.has(10));
+// → true
+console.log(group.has(30));
+// → false
+group.add(10);
+group.delete(10);
+console.log(group.has(10));
