@@ -1457,3 +1457,4 @@ function dominantDirection(text) {
 }
 console.log(dominantDirection("Hello! مساء الخي"));
 console.log(dominantDirection("Hey, مساء الخير"));
+// Chapter 6 La Vida Secreta de los Objetos
