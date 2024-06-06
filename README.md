@@ -28,7 +28,7 @@ This portfolio site serves as a digital resume and a showcase of my work in the 
 - HTML5
 - CSS3
 - JavaScript
-- Chat GPT(code review) 
+- playwright + TS
 ## Installation
 
 1. Clone the repository:

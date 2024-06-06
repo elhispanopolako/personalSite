@@ -1513,3 +1513,62 @@ console.log(group.has(30));
 group.add(10);
 group.delete(10);
 console.log(group.has(10));
+
+// Chapter 8 Bugs y errores
+class MultiplicatorUnitFailure extends Error { }
+
+function primitiveMultiply(a, b) {
+    if (Math.random() < 0.2) {
+        return a * b;
+    } else {
+        throw new MultiplicatorUnitFailure("Klunk");
+    }
+}
+
+function reliableMultiply(a, b) {
+    try {
+        return primitiveMultiply(a, b)
+    } catch (e) {
+        return reliableMultiply(a, b)
+    }
+}
+
+console.log(reliableMultiply(8, 8));
+
+const box = new class {
+    locked = true;
+    #content = [];
+
+    unlock() { this.locked = false; }
+    lock() { this.locked = true; }
+    get content() {
+        if (this.locked) throw new Error("Locked!");
+        return this.#content;
+    }
+};
+
+function withBoxUnlocked(body) {
+    let locked = box.locked
+    try {
+        return body()
+    } finally {
+        if (locked) {
+            box.lock()
+        }
+    }
+    // Your code here.
+}
+
+withBoxUnlocked(() => {
+    box.content.push("gold piece");
+});
+
+try {
+    withBoxUnlocked(() => {
+        throw new Error("Pirates on the horizon! Abort!");
+    });
+} catch (e) {
+    console.log("Error raised: " + e);
+}
+console.log(box.locked);
+// → true
