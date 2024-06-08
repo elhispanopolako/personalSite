@@ -1572,3 +1572,4 @@ try {
 }
 console.log(box.locked);
 // → true
+// Chapter 9 Expresiones regulares
