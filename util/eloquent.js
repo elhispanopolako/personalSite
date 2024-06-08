@@ -1575,31 +1575,31 @@ console.log(box.locked);
 // Chapter 9 Expresiones regulares
 
 // Regexp Golf
-verify(/.../,
+verify(/ca[rt]/,
     ["my car", "bad cats"],
     ["camper", "high art"]);
 
-verify(/.../,
+verify(/pr?op/,
     ["pop culture", "mad props"],
     ["plop", "prrrop"]);
 
-verify(/.../,
+verify(/ferr(et|y|ari)/,
     ["ferret", "ferry", "ferrari"],
     ["ferrum", "transfer A"]);
 
-verify(/.../,
+verify(/ious($|\P{L})/u,
     ["how delicious", "spacious room"],
     ["ruinous", "consciousness"]);
 
-verify(/.../,
+verify(/\s[.,:;]/,
     ["bad punctuation ."],
     ["escape the period"]);
 
-verify(/.../,
+verify(/\p{L}{7}/u,
     ["Siebentausenddreihundertzweiundzwanzig"],
     ["no", "three small words"]);
 
-verify(/.../,
+verify(/(^|\P{L})[^\P{L}e]+($|\P{L})/ui,
     ["red platypus", "wobbling nest"],
     ["earth bed", "bedrøvet abe", "BEET"]);
 
