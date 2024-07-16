@@ -37,8 +37,9 @@ const projectsJSON = [
     { projectName: 'Password Generator', img: 'files/project5.png', link: 'https://elhispanopolako.github.io/passwordGenerator/', isActive: false },
 ]
 // On init
-displayProjects()
-addHoverToSkills()
+onInit()
+
+
 scrollToTopBtn.addEventListener('click', scrollToTop)
 window.onscroll = function () {
     checkScroll();
@@ -91,6 +92,17 @@ function createProjectCard(project) {
     portfolioContainer.appendChild(projectDiv)
 }
 //Skills 
+function onInit() {
+    addHoverToSkills()
+    scaleBrowser()
+}
+
+function scaleBrowser() {
+    document.body.style.zoom = 1
+    let scale = 'scale(1)';
+    document.body.style.webkitTransform = scale;    // Chrome, Opera, Safari
+    document.body.style.transform = scale;     // General
+}
 function addHoverToSkills() {
     skills.forEach((skill) => {
         skill.classList.add('hvr-float-shadow')
